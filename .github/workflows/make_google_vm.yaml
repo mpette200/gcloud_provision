@@ -6,6 +6,12 @@ on:
 jobs:
   provision_vm:
     runs-on: ubuntu-latest
+    
+    env:
+      # update this to value copied from gcloud commands and outputs
+      WORKLOAD_ID_PROVIDER: 'projects/258329370240/locations/global/workloadIdentityPools/github-pool-02/providers/github-token-02'
+      PROJECT_ID: birkbeck-ccp-01
+      SERVICE_ACCOUNT_NAME: my-github-02
 
     permissions:
       contents: read
@@ -18,8 +24,8 @@ jobs:
     - id: auth
       uses: google-github-actions/auth@v0
       with:
-        workload_identity_provider: 'projects/258329370240/locations/global/workloadIdentityPools/mpette200-github-01/providers/github-actions'
-        service_account: 'mpette200-github@birkbeck-ccp-01.iam.gserviceaccount.com'
+        workload_identity_provider: '${{ env.WORKLOAD_ID_PROVIDER }}'
+        service_account: '${{ env.SERVICE_ACCOUNT_NAME }}@${{ env.PROJECT_ID }}.iam.gserviceaccount.com'
 
     - name: 'Use gcloud CLI'
       run: |-
