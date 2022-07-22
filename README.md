@@ -11,9 +11,9 @@ A modified version of those steps is listed here.
 #### DEFINE VARIABLES ####
 # update all variables here to match your requirements
 export PROJECT_ID="birkbeck-ccp-01"
-export SERVICE_ACCOUNT_NAME="my-github-02"
-export POOL_NAME="github-pool-02"
-export PROVIDER_NAME="github-token-02"
+export SERVICE_ACCOUNT_NAME="my-github-03"
+export POOL_NAME="github-pool-03"
+export PROVIDER_NAME="github-token-provider-03"
 
 # The variable REPO_NAME is used to set a condition requiring
 # the repository name in the JSON web token to match the value
