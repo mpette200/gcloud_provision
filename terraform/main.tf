@@ -1,6 +1,3 @@
-variable "tfstate_bucket" {
-  type = string
-}
 variable "project_id" {
   type = string
 }
@@ -14,7 +11,7 @@ terraform {
   }
 
   backend "gcs" {
-    bucket = var.tfstate_bucket
+    bucket = "tfstate-store-mpette200"
   }
 }
 
