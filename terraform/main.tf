@@ -5,6 +5,10 @@ terraform {
       version = "4.29.0"
     }
   }
+
+  backend "gcs" {
+    bucket  = "tfstate-store-mpette200"
+  }
 }
 
 provider "google" {
