@@ -7,7 +7,7 @@ terraform {
   }
 
   backend "gcs" {
-    bucket  = "tfstate-store-mpette200"
+    bucket = "tfstate-store-mpette200"
   }
 }
 
