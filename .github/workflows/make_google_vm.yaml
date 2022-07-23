@@ -31,6 +31,6 @@ jobs:
       run: |-
         cd terraform
         terraform init
-        terraform fmt
+        terraform fmt -diff
         terraform validate
         cat main.tf
