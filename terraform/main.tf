@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     google = {
-      source = "hashicorp/google"
+      source  = "hashicorp/google"
       version = "4.29.0"
     }
   }
@@ -31,11 +31,11 @@ resource "google_compute_instance" "default" {
 }
 
 resource "google_compute_firewall" "default" {
-  name        = "firewall-allow-http"
-  network     = "default"
+  name    = "firewall-allow-http"
+  network = "default"
 
   allow {
-    protocol  = "tcp"
-    ports     = ["80"]
+    protocol = "tcp"
+    ports    = ["80"]
   }
 }

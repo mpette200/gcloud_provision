@@ -32,5 +32,6 @@ jobs:
         cd terraform
         terraform init
         terraform fmt -diff
+        terraform fmt -check
         terraform validate
-        cat main.tf
+        terraform apply -input=false -auto-approve
