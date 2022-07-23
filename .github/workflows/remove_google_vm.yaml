@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     
     env:
-      # update this to value copied from gcloud commands and outputs
+      # these need to be updated to suit the configuration
       WORKLOAD_ID_PROVIDER: 'projects/258329370240/locations/global/workloadIdentityPools/github-pool-03/providers/github-token-provider-03'
       PROJECT_ID: birkbeck-ccp-01
       TF_VAR_project_id: birkbeck-ccp-01
