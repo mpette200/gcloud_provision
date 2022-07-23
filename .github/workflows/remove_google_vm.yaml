@@ -31,6 +31,4 @@ jobs:
       run: |-
         cd terraform
         terraform init
-        terraform fmt -check
-        terraform validate
-        terraform apply -input=false -auto-approve
+        terraform destroy -input=false -auto-approve
