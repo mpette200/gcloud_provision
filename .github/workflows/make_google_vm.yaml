@@ -30,7 +30,6 @@ jobs:
     - name: 'terraform-vm'
       run: |-
         cd terraform
-        gcloud auth application-default login
         terraform init
         terraform fmt
         terraform validate
