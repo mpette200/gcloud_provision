@@ -27,6 +27,10 @@ jobs:
         workload_identity_provider: '${{ env.WORKLOAD_ID_PROVIDER }}'
         service_account: '${{ env.SERVICE_ACCOUNT_NAME }}@${{ env.PROJECT_ID }}.iam.gserviceaccount.com'
 
-    - name: 'Use gcloud CLI'
+    - name: 'terraform-vm'
       run: |-
-        gcloud info
+        cd terraform
+        gcloud auth application-default login
+        terraform init
+        terraform fmt
+        terraform validate
