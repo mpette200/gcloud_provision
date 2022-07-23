@@ -31,4 +31,5 @@ jobs:
       run: |-
         cd terraform
         terraform init
+        terraform apply -refresh-only -auto-approve
         terraform destroy -input=false -auto-approve
