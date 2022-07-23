@@ -1,3 +1,10 @@
+variable "tfstate_bucket" {
+  type = string
+}
+variable "project_id" {
+  type = string
+}
+
 terraform {
   required_providers {
     google = {
@@ -7,12 +14,12 @@ terraform {
   }
 
   backend "gcs" {
-    bucket = "tfstate-store-mpette200"
+    bucket = var.tfstate_bucket
   }
 }
 
 provider "google" {
-  project = "birkbeck-ccp-01"
+  project = var.project_id
   region  = "europe-west1"
   zone    = "europe-west1-b"
 }
