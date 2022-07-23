@@ -30,7 +30,7 @@ resource "google_compute_instance" "default" {
   }
 }
 
-resource "google_compute_firewall" "default" {
+resource "google_compute_firewall" "allow-http" {
   name    = "firewall-allow-http"
   network = "default"
 
