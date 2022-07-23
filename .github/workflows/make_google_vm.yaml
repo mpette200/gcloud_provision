@@ -33,5 +33,4 @@ jobs:
         terraform init
         terraform fmt
         terraform validate
-        git commit -a -m 'reformat main.tf'
-        git push
+        cat main.tf
