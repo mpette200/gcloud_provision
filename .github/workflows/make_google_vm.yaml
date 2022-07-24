@@ -46,7 +46,7 @@ jobs:
         gcloud compute ssh "vm-price-app"
         mkdir ~/installers
         cd ~/installers
-        wget 'https://repo.anaconda.com/miniconda/Miniconda3-py39_4.12.0-Linux-x86_64.sh' miniconda_install.sh
+        wget 'https://repo.anaconda.com/miniconda/Miniconda3-py39_4.12.0-Linux-x86_64.sh' -O miniconda_install.sh
         bash miniconda_install.sh -b -p ~/miniconda
         conda create --name py_39_price python=3.9.7
         conda activate py_39_price
