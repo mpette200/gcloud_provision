@@ -43,7 +43,7 @@ jobs:
 
     - name: 'setup python env'
       run: |-
-        gcloud ssh "vm-price-app"
+        gcloud compute ssh "vm-price-app"
         mkdir ~/installers
         cd ~/installers
         wget 'https://repo.anaconda.com/miniconda/Miniconda3-py39_4.12.0-Linux-x86_64.sh' miniconda_install.sh
