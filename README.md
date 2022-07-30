@@ -42,11 +42,13 @@ gcloud projects add-iam-policy-binding "${PROJECT_ID}" \
 gcloud iam workload-identity-pools create "${POOL_NAME}" \
   --location="global" \
 
+# Important for security: --attribute-condition
 gcloud iam workload-identity-pools providers create-oidc "${PROVIDER_NAME}" \
   --location="global" \
   --workload-identity-pool="${POOL_NAME}" \
-  --attribute-mapping="google.subject=assertion.sub,attribute.repository=assertion.repository" \
-  --issuer-uri="https://token.actions.githubusercontent.com"
+  --attribute-mapping="google.subject=assertion.sub,attribute.repository=assertion.repository,attribute.repository_owner_id=assertion.repository_owner_id" \
+  --issuer-uri="https://token.actions.githubusercontent.com" \
+  --attribute-condition="attribute.repository_owner_id=='19962594'"
 
 # save this for next command
 export POOL_ID_LONG="$( \
